@@ -6,13 +6,23 @@
   <title>Colin's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Intro Popup -->
+  <div class="intro-screen">
+    <h1 class="typewriter">Hey, I'm COLIN PRADEEP</h1>
+    <button class="intro-btn" onclick="document.querySelector('.intro-screen').style.display='none'; document.getElementById('about').scrollIntoView({behavior: 'smooth'});">Get to Know Me</button>
+  </div>
+
   <header class="hero">
     <nav class="navbar">
       <div class="logo">COLIN PRADEEP</div>
+      <div class="hamburger">&#9776;</div>
       <ul class="nav-links">
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="assets/COLIN resume.pdf" download class="btn">Download CV</a></li>
         <li><button class="hire-btn">Hire Me →</button></li>
@@ -31,10 +41,53 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Mood Tracker App</h3>
-      <p>A React + Firebase app to track moods, show charts, and store notes.</p>
-      <a href="https://github.com/ColinCreates/mood-tracker" target="_blank">View on GitHub</a>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Mood Tracker App</h3>
+        <p>A React + Firebase app to track moods, show charts, and store notes.</p>
+        <a href="https://github.com/ColinCreates/mood-tracker" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Digital Detox Companion</h3>
+        <p>App to promote healthy tech use with mood logs, tips, and detox plans.</p>
+        <a href="#">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Responsive personal portfolio with glowing UI and scroll animations.</p>
+        <a href="#">View Live</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul class="skill-list">
+      <li>HTML5 & CSS3</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Firebase</li>
+      <li>Node.js</li>
+      <li>C / C++</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="assets/profile2.jpg" alt="About Profile" class="about-img" />
+      <div class="about-text">
+        <p>
+          As a Campus Ambassador at Fawstech Innovations Pvt Ltd, our team thrives on innovation and the practical application of AI and Machine Learning. Currently pursuing a B.Tech at Rajagiri School of Engineering & Technology, I am deeply involved in exploring supervised learning techniques and their potential to revolutionize industry practices.
+        </p>
+        <p>
+          With a certification in the Fundamentals of AI from IIT Guwahati and hands-on experience as a Project Intern, our work at College of Engineering Trivandrum has honed my competency in tackling complex problems. My goal is to contribute significantly to projects that stand at the intersection of academia and industry, fostering a symbiotic relationship for continuous advancement.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -51,5 +104,11 @@
       </a>
     </div>
   </section>
+
+  <script>
+    document.querySelector('.hamburger').onclick = () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    };
+  </script>
 </body>
 </html>
