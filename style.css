@@ -27,22 +27,26 @@
   }
   
   .typewriter {
-    font-size: 28px;
     font-family: 'Orbitron', sans-serif;
-    border-right: 2px solid #a855f7;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(30, end) forwards;
-    color: #a855f7;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #a855f7;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
+    font-size: 2rem;
+    color: #b47aff;
+    text-align: center;
+    white-space: nowrap; /* Ensures text stays on one line */
+    overflow: hidden; /* Hides overflowing text */
+    display: inline-block; /* Prevents full width */
+    border-right: 3px solid #b47aff; /* Simulates the typing cursor */
+    animation: typing 3s steps(22, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 18ch; } /* Adjusted width to include full text */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
   
   .intro-btn {
     padding: 12px 20px;
@@ -389,4 +393,62 @@
       height: 230px;
     }
   }
-  
+/* Quote Section */
+.quote-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Courier New', monospace; /* Classic coder font */
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.word {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect: Enlarge and glow in violet */
+.word:hover {
+  transform: scale(1.5);
+  text-shadow: 0 0 10px #9b5de5, 0 0 20px #9b5de5, 0 0 30px #9b5de5;
+}
+
+/* Neon Flicker Effect */
+@keyframes flicker {
+  0% { text-shadow: 0 0 5px #9b5de5, 0 0 10px #9b5de5; }
+  50% { text-shadow: 0 0 15px #9b5de5, 0 0 25px #9b5de5; }
+  100% { text-shadow: 0 0 5px #9b5de5, 0 0 10px #9b5de5; }
+}
+
+/* Apply flicker animation to words */
+.word:hover {
+  animation: flicker 0.5s infinite alternate;
+}
+
+
+
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  color: #ffffff;
+  padding: 15px 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
